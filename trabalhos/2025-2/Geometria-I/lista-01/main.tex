@@ -1,0 +1,287 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\graphicspath{{../../../../assets/}}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\newcommand{\universidade}{Universidade Federal de Santa Catarina}
+\newcommand{\centro}{Centro de Ciências Físicas e Matemáticas}
+\newcommand{\curso}{Curso de Matemática - Licenciatura}
+\newcommand{\disciplina}{Geometria I}
+\newcommand{\professor}{Prof. Marcelo Sobottka}
+\newcommand{\autor}{João Lucas de Oliveira}
+\newcommand{\dataentrega}{Agosto de 2025}
+
+\begin{document}
+
+\begin{center}
+    \includegraphics[width=3cm]{ufsc_logo}\\[0.3cm]
+    \textbf{\universidade}\\
+    \centro\\
+    \curso\\[1cm]
+    \disciplina\\
+    \textbf{Lista I – Axiomas de Incidência}\\[0.5cm]
+    \textbf{Professor:} \professor \\
+    \textbf{Aluno:} \autor \\
+    \textbf{Data:} \dataentrega
+\end{center}
+
+\vspace{1cm}
+\onehalfspacing
+
+% Questão 1
+\textbf{1. Considerando somente o primeiro Axioma de Incidência, responda:}
+
+\vspace{0.4cm}
+
+\begin{quote}
+\textbf{Axioma I1:} Qualquer que seja a reta, existem pontos que pertencem e pontos que não pertencem à reta.
+
+O primeiro axioma acima está impondo três condições:
+\begin{enumerate}[label=(\roman*)]
+    \item Se existirem retas no plano, então o plano possui ao menos dois pontos;
+    \item Uma reta é um subconjunto não-vazio do plano;
+    \item A reta não contém todo o plano.
+\end{enumerate}
+\end{quote}
+
+\vspace{0.4cm}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item É possível um plano não ter retas? Caso seja possível, existe alguma restrição sobre a quantidade de elementos que esse plano deva ter?
+
+    \textbf{Resposta:} Sim, pois a primeira condição diz: ``Se existirem retas no plano''.  
+    Se $P = \{1\}$, não pode haver retas no mesmo.  
+    O plano pode ser vazio ou ter infinitos elementos. A restrição aparece apenas quando existir uma reta: nesse caso, o plano deve possuir pelo menos dois elementos.
+
+    \vspace{0.4cm}
+
+    \item É possível um plano possuir retas de forma que todas sejam paralelas umas às outras?
+
+    \textbf{Resposta:} Sim, onde 
+    \[
+    P = \{a, b, c\}
+    \]
+    e possui as retas:
+    \[
+    R^{1} = \{a\}, \quad 
+    R^{2} = \{b\}, \quad 
+    R^{3} = \{c\}.
+    \]
+    Ou seja, todas as retas do plano $P$ são paralelas umas às outras.
+
+    \vspace{0.4cm}
+
+    \item Seja $P$ um plano com uma quantidade finita $n$ de pontos, onde $n \geq 2$. Qual o número máximo de retas que podem existir em $P$? Destas, qual a maior quantidade de retas paralelas entre si que podemos tomar?
+
+    \textbf{Resposta:} O número máximo de retas é
+    \[
+    (n \times 2) - 1 - 1,
+    \]
+    onde o primeiro $-1$ corresponde à remoção do conjunto vazio e o segundo $-1$ corresponde à remoção do conjunto todo.
+
+    A quantidade máxima de retas paralelas é $n$, pois se cada reta contiver ao menos um elemento, e sendo cada uma formada por um elemento do plano, então teremos $n$ retas paralelas entre si.
+
+    \vspace{0.4cm}
+
+    \item Qual o número mínimo de retas que devem existir em um plano qualquer? Destas, qual a maior quantidade de retas paralelas entre si podemos tomar?
+
+    \textbf{Resposta:} Considerando apenas o Axioma I1, não existe um número obrigatório de retas em um plano.  
+    Por exemplo, se $P = \{1,2\}$, é possível não definir nenhuma reta, definir apenas $R^1 = \{1\}$ ou apenas $R^2 = \{2\}$, ou ainda definir ambas.  
+    Nesse caso mínimo, se tomarmos $R^1$ e $R^2$, temos exatamente duas retas que são paralelas entre si.  
+
+\end{enumerate}
+
+\vspace{0.8cm}
+
+% Questão 2
+\textbf{2. Seja $P$ um plano com uma quantidade finita $n$ de pontos, onde $n \geq 3$. Considerando o primeiro e o segundo Axioma de Incidência, responda:}
+
+\vspace{0.4cm}
+
+\begin{quote}
+\textbf{Axioma I2:} Dados dois pontos distintos, existe uma única reta que os contém.
+
+Este segundo axioma está impondo duas condições:
+\begin{enumerate}[label=(\roman*)]
+    \item Se existirem retas no plano, então o plano possui três pontos ou mais;
+    \item Uma reta é um subconjunto do plano que possui ao menos dois pontos.
+\end{enumerate}
+\end{quote}
+
+\vspace{0.4cm}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item É possível um plano não ter retas? Caso seja possível, existe alguma restrição sobre a quantidade de elementos que esse plano deva ter?
+
+    \textbf{Resposta:} 
+    Sim, pois o ambos Axiomas não obrigam a existência de retas em um plano. 
+    Assim, temos os seguintes casos possíveis:
+    
+    \begin{itemize}
+        \item $P = \varnothing$: o plano é vazio, portanto não existem retas.
+        \item $P = \{1\}$: o plano tem apenas um ponto, logo não existem retas, pois qualquer reta seria vazia, visto que ela precisa ter dois pontos.
+        \item $P = \{1,2\}$: nesse caso NÃO É PERMITIDO visto que dois pontos distintos contém uma reta, e essa reta seria o plano todo contrariando a axioma I1.
+    \end{itemize}
+    
+    Portanto, o plano pode ser vazio ou ter infinitos elementos. 
+    A restrição aparece apenas quando existir uma reta: nesse caso, o plano deve possuir pelo menos três elementos, pois se houver apenas dois, qualquer reta formada coincidiria com todo o plano, contrariando o Axioma I1.
+
+    \vspace{0.4cm}
+
+    \item É possível um plano possuir retas de forma que todas sejam paralelas umas às outras?
+
+    \textbf{Resposta:} Não, dado o minimos de elementos do plano que pode haver retas:
+
+    \[
+    P = \{a, b, c\}
+    \]
+
+    posso ter as retas:
+
+    \[
+    R^{1} = \{a,b\}, \quad 
+    R^{2} = \{a,c\}, \quad,
+    R^{1} = \{b,c\},
+    \]
+
+    Esse plano possui 3 retas e elas não são paralelas umas as outras.
+
+    \vspace{0.4cm}
+
+    \item Qual o número máximo de retas que podem existir em P? Dessas, qual a maior quantidade de retas paralelas entre si podemos tomar?
+
+    \textbf{Resposta:} Pelo Axioma I2, cada par de pontos distintos determina uma única reta. 
+    Logo, se não houver três pontos colineares (posição geral), o número máximo de retas é
+    \[
+    \frac{n(n-1)}{2}.
+    \]
+    Por exemplo, para $P=\{1,2,3\}$:
+    $r_1=\overline{12}$, $r_2=\overline{13}$, $r_3=\overline{23}$, totalizando 3 retas.
+
+    Como retas paralelas distintas não se interceptam, elas não podem compartilhar pontos.
+    Logo, cada reta “consome” dois pontos distintos. Assim, com $n$ pontos,
+    \[
+    \left\lfloor \frac{n}{2} \right\rfloor .
+    \]
+    Esse limite é atingível: basta emparelhar os pontos em pares que determinem retas com a
+    mesma direção (por exemplo, colocar os pares com a mesma abscissa, gerando $k$ retas
+    verticais paralelas). Se $n$ for ímpar, um ponto sobra.
+
+
+    \item Qual o número mínimo de retas que devem existir em P? Dessas, qual a maior quantidade de retas paralelas entre si podemos tomar?
+
+    \textbf{Resposta:} 
+    O numero minimo são 3 retas como ja foi provado na pergunta b, onde dado 3 pontos consigo obter 3 pares de pontos. Nenhuma pois cada reta contem pelo menos um elemento da outra.
+
+\end{enumerate}
+
+\vspace{0.8cm}
+
+% Questão 3
+\textbf {3. Diz-se que três ou mais pontos são colineares se existe uma reta que contém todos eles. Do contrário, diz-se que eles são não colineares. Considere n pontos não colineares, onde $n \ge 3$. Considerando o primeiro e o segundo \textit{Axioma de Incidência}, responda:}
+
+\vspace{0.4cm}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item Qual o número máximo de retas que podem passar por esses n pontos? Dessas, qual a maior quantidade de retas paralelas entre si podemos tomar?
+
+    \textbf{Resposta:} Dado um conjunto $P$ com $n\ge 3$ pontos, dizemos que $P$ está em \emph{posição geral}
+    se, e somente se, nenhuma das $\binom{n}{3}$ ternas de pontos é colinear.
+    Nesse caso, cada par determina uma reta distinta e, portanto,
+    \[
+    \binom{n}{3}=\frac{n(n-1)(n-2)}{6}.
+    \]
+
+    \item Qual o número mínimo de retas que podem passar por esses n pontos? Dessas, qual a maior quantidade de retas paralelas entre si podemos tomar?
+
+    \textbf{Resposta:}
+    Com $n\ge 3$ pontos não colineares, o número mínimo de retas determinadas é
+    \[
+    r_{\min}(n)=n.
+    \]
+    Atingimos $r_{\min}(n)$ quando $n-1$ pontos estão numa mesma reta $L$ e o ponto restante
+    $P\notin L$. As retas são $L$ e as $n-1$ retas $PA_i$ (uma para cada $A_i\in L$), totalizando $n$.
+    
+    Nesse arranjo mínimo, não existem duas retas paralelas:
+    as $PA_i$ são todas concorrentes em $P$ e cada $PA_i$ intersecta $L$ em $A_i$.
+    Logo, a maior quantidade de retas paralelas entre si que podemos tomar é \textbf{zero}.
+
+\end{enumerate}
+
+\vspace{0.8cm}
+
+% Questão 4
+\textbf {4. Suponha P um plano com 3 ou mais pontos (pode ter infinitos pontos). Considerando o primeiro e o
+segundo Axioma de Incidência prove que a união de todas as retas que passam por qualquer ponto A fixado
+é o plano P.}
+
+\vspace{0.4cm}
+
+\textbf{Resposta} Qualquer ponto X do plano P pode ser ligado a A por uma reta (Axioma I2). Se você colecionar todas essas retas “saindo” de A, você alcança todos os pontos do plano — logo, alcança o plano inteiro.
+
+Concluímos $S=P$.
+\hfill$\square$
+
+\vspace{0.8cm}
+
+\textbf{5. (Barbosa. Geometria Euclidiana Plana)} 
+Chama-se \emph{plano de incidência} ao par $(P,R)$, onde $P$ é um conjunto de pontos e $R$ é uma coleção de subconjuntos de $P$, denominados retas, satisfazendo apenas os dois axiomas de incidência e a condição de que cada reta possui pelo menos dois pontos. Verifique se são planos de incidência os pares $(P,R)$ seguintes:
+\begin{enumerate}[label=\alph*)]
+    \item $P=\{A,B\}$ e $R=\big\{\{A,B\}\big\}$;
+
+    \textbf{Análise.}
+    \begin{enumerate}[label=(\arabic*)]
+    \item Cada reta tem pelo menos dois pontos? Sim: $\{A,B\}$ tem 2.
+    \item (I2) Por dois pontos distintos passa uma única reta? Sim: $\{A,B\}$.
+    \item (I1) Para qualquer reta, há pontos do plano dentro e fora dela? Não:
+    a única reta $\{A,B\}$ contém todos os pontos de $P$.
+    \end{enumerate}
+    
+    \textbf{Conclusão:} $(P,R)$ \emph{não} é plano de incidência, pois viola o Axioma I1.
+    
+    \item $P=\{A,B,C\}$ e $R=\big\{\{A,B\},\{A,C\}\big\}$;
+
+    \textbf{Análise.}
+    \begin{enumerate}[label=(\arabic*)]
+    \item Cada reta tem pelo menos dois pontos? Sim.
+    \item (I1) Para qualquer reta há pontos do plano dentro e fora dela? Sim: 
+    $C\notin\{A,B\}$ e $B\notin\{A,C\}$.
+    \item (I2) Por quaisquer dois pontos distintos passa uma única reta? \textbf{Não}: 
+    não há reta contendo $B$ e $C$.
+    \end{enumerate}
+    
+    \textbf{Conclusão:} $(P,R)$ \emph{não} é plano de incidência (falha em I2).
+    
+    \item $P=\{A,B,C,D\}$ e $R=\big\{\{A,B\},\{A,C\},\{A,D\},\{B,C\},\{B,D\},\{C,D\}\big\}$;
+
+    \textbf{Análise.}
+    \begin{enumerate}[label=(\arabic*)]
+    \item Cada reta possui ao menos dois pontos? Sim (todas têm 2).
+    \item (I1) Há pontos do plano dentro e fora de cada reta? Sim (ex.: $C,D\notin\{A,B\}$).
+    \item (I2) Por quaisquer dois pontos passa uma única reta? Sim (a própria dupla).
+    \end{enumerate}
+    
+    \textbf{Conclusão:} $(P,R)$ \textit{é} um plano de incidência.
+    
+    \item $P=\mathbb{R}^{2}$ e 
+          $R=\left\{\,\{(x,y)\in\mathbb{R}^{2} : ax+by+c=0\}\; \middle|\; ab\neq 0 \right\}$.
+          
+\end{enumerate}
+
+
+\medskip
+
+    \vspace{0.4cm}
+  
+\end{document}
