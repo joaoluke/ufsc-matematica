@@ -16,8 +16,9 @@
 \newcommand{\curso}{Curso de Matemática - Licenciatura}
 \newcommand{\disciplina}{Fundamentos da Aritmética}
 \newcommand{\professor}{Prof. Paulinho Demeneghi}
+\newcommand{\tutora}{Profa. Karina Gomez Pacheco}
 \newcommand{\autor}{João Lucas de Oliveira}
-\newcommand{\dataentrega}{Agosto de 2025}
+\newcommand{\dataentrega}{24 de Agosto de 2034}
 
 \begin{document}
 
@@ -27,10 +28,327 @@
     \centro\\
     \curso\\[1cm]
     \disciplina\\
-    \textbf{Lista I - Soma e produto nos naturais}\\[0.5cm]
+    \textbf{Lista I — Soma e produto nos naturais}\\[0.5cm]
     \textbf{Professor:} \professor \\
+    \textbf{Tutora:} \tutora \\
     \textbf{Aluno:} \autor \\
     \textbf{Data:} \dataentrega
 \end{center}
+
+\vspace{1cm}
+
+\section*{1.}
+Complete a demonstração da proposição abaixo, indicando qual axioma foi empregado em cada passo.
+
+\medskip
+
+\textbf{Proposição.} Para quaisquer números naturais $a, b, c$, tem-se que:
+\[
+(a + b) + c = (a + c) + b.
+\]
+
+\textbf{Demonstração.} Tome números naturais $a, b, c$ arbitrários. Temos:
+
+\[
+\begin{aligned}
+(a + b) + c &= a + (b + c) 
+&& \text{pelo axioma \textbf{A1}, associatividade da adição} \\[4pt]
+a + (b + c) &= a + (c + b) 
+&& \text{pelo axioma \textbf{A2}, comutatividade da adição, pois } b + c = c + b \\[4pt]
+a + (c + b) &= (a + c) + b 
+&& \text{pelo axioma \textbf{A2}, comutatividade da adição, pois } b + c = c + b, \\
+&&& \text{e axioma \textbf{A1}, associatividade da adição, pois } a + (c + b) = (a + c) + b
+\end{aligned}
+\]
+
+\medskip
+
+Logo, $(a + b) + c = (a + c) + b$, como queríamos demonstrar. \qed
+
+\section*{2.}
+Complete cada uma das demonstrações abaixo, preenchendo as lacunas.
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(Resolvido) Proposição (Lei do cancelamento da adição à esquerda).} Para quaisquer números naturais $a, b, c$, se $c + a = c + b$, então $a = b$.
+
+    \textbf{Demonstração.} Tome $a, b, c$ arbitrários. Suponha que
+    \[
+        c + a = c + b \tag{1}
+    \]
+    Queremos mostrar que $a = b$. De fato, temos que
+    \begin{align*}
+        a + c &= c + a && \text{pelo axioma A2 — comutatividade da adição} \\
+        c + a &= c + b && \text{pela equação (1)} \\
+        c + b &= b + c && \text{pelo axioma A2 — comutatividade da adição}
+    \end{align*}
+
+    Portanto, é verdade que $a + c = b + c$. A lei do cancelamento da adição à direita (A4) garante que $a = b$. Isto completa a demonstração.
+
+    \item \textbf{Proposição.} Para quaisquer números naturais $a, b$, se $a = 0$ e $b = 0$, então $a + b = 0$.
+
+    \textbf{Demonstração.} Tome $a, b$ arbitrários. Suponha que $a = 0$ e $b = 0$.\\
+    Temos que
+    \begin{align*}
+        a + b &= a + 0 && \text{já que $b = 0$} \\
+        a + 0 &= a && \text{pelo axioma A3 — elemento neutro da adição} \\
+        a &= 0 && \text{por hipótese}
+    \end{align*}
+    Logo, $a + b = 0$, como queríamos provar.
+
+    \item \textbf{Proposição.} Para quaisquer números naturais $a$ e $b$, se $a + b = a$, então $b = 0$.
+
+    \textbf{Demonstração.} Tome $a, b$ arbitrários. Suponha que $a + b = a$. Temos que
+    \[
+    a + b = a \quad \text{por hipótese}
+    \]
+    \[
+    a = a + 0 \quad \text{pelo axioma A3 — elemento neutro da adição}
+    \]
+    
+    Logo, $a + b = a + 0$.  
+    Podemos agora empregar o \textbf{axioma A2 — comutatividade da adição onde teremos $b + a = 0 + a$} e então usamos \textbf{axioma A4 — cancelamento da adição à esquerda} para cancelar $a$ em ambos os lados, e obter $b = 0$.  
+    Isto completa a demonstração.
+    
+    \section*{3.}
+    Escreva uma demonstração para cada uma das seguintes proposições.
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item Para quaisquer números naturais $a, b, c$, se $a + (b + c) = 0$, então $a = 0$, $b = 0$ e $c = 0$.
+
+        \textbf{Demonstração.} Tome $a, b, c$ arbitrários. Suponha que
+        \[
+        a + (b + c) = 0.
+        \]
+        
+        Aplicando o \textbf{Axioma A5} (cancelamento da adição), temos:
+        \[
+        a = 0 \quad \text{e} \quad b + c = 0.
+        \]
+        
+        Agora, aplicamos novamente o \textbf{Axioma A5} à igualdade $b + c = 0$, e obtemos:
+        \[
+        b = 0 \quad \text{e} \quad c = 0.
+        \]
+        
+        Portanto, $a = 0$, $b = 0$ e $c = 0$, como queríamos demonstrar.
+        
+        \item Para quaisquer números naturais $a, b, c$, se $a + (b + c) = c$, então $a = 0$ e $b = 0$.
+
+        \textbf{Demonstração.} Tome $a, b, c$ arbitrários. Suponha que
+        \[
+        a + (b + c) = c.
+        \]
+        
+        Pelo axioma \textbf{A1} (associatividade da adição), temos:
+        \[
+        (a + b) + c = c.
+        \]
+        
+        Pelo axioma \textbf{A3} (elemento neutro da adição), temos que:
+        \[
+        c = 0 + c,
+        \]
+        então podemos escrever:
+        \[
+        (a + b) + c = 0 + c.
+        \]
+        
+        Pelo \textbf{Axioma A4} (cancelamento da adição à direita), concluímos:
+        \[
+        a + b = 0.
+        \]
+        
+        Finalmente, pelo \textbf{Axioma A5} (se $a + b = 0$, então $a = 0$ e $b = 0$), obtemos:
+        \[
+        a = 0 \quad \text{e} \quad b = 0,
+        \]
+        como queríamos demonstrar. \qed
+        
+    \end{enumerate}
+    
+    \vspace{1cm}
+    
+    \section*{4.}
+    Use os axiomas A1–A5, M1–M5 e D para passar, justificando completamente, da primeira para a segunda expressão fornecida em cada item. Em cada etapa de uma resolução, use um axioma no máximo uma vez (no exemplo abaixo, observe como o axioma M2 foi usado duas vezes seguidas, separadamente), ou explicite o resultado de no máximo uma operação.
+    
+    Em cada item, encontre três sequências diferentes de etapas que nos permitem ir da primeira para a segunda expressão.
+    
+    O objetivo desse exercício é ilustrar que mesmo manipulações simples, que por vezes efetuamos de cabeça, costumam ser o resultado de uma série de pequenas etapas, efetuadas em sucessão. Aprender a desacelerar a cabeça para perceber cada uma dessas pequenas etapas é um bom exercício para disciplinar o raciocínio, algo que precisamos para trabalhar bem com ideias progressivamente mais complexas em Matemática.
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item De $2 \cdot 3 + 8$ para $2 \cdot (3 + 4)$.\\
+    
+        \textbf{Resolução:} (apenas uma maneira, encontre mais duas) Temos que
+        \begin{itemize}
+            \item $2 \cdot 3 + 8 = 2 \cdot 3 + 2 \cdot 4$ \hfill pois $8 = 2 \cdot 4$
+            \item $2 \cdot 3 + 2 \cdot 4 = 3 \cdot 2 + 2 \cdot 4$ \hfill por M2 — lei da comutatividade da multiplicação
+            \item $3 \cdot 2 + 2 \cdot 4 = 3 \cdot 2 + 4 \cdot 2$ \hfill por M2 — lei da comutatividade da multiplicação
+            \item $3 \cdot 2 + 4 \cdot 2 = (3 + 4) \cdot 2$ \hfill por D — lei da distributividade à direita
+            \item $(3 + 4) \cdot 2 = 2 \cdot (3 + 4)$ \hfill por M2 — lei da comutatividade da multiplicação
+        \end{itemize}
+    
+        \item De $30 + 4 \cdot 5$ para $5 \cdot (8 + 2)$.
+        
+        \textbf{Resolução:} Temos que
+        \begin{itemize}
+            \item $30 + 4 \cdot 5 = 5 \cdot 6 + 4 \cdot 5$ \hfill pois $30 = 5 \cdot 6$
+            \item $5 \cdot 6 + 4 \cdot 5 = 6 \cdot 5 + 4 \cdot 5$ \hfill por M2 — comutatividade da multiplicação
+            \item $6 \cdot 5 + 4 \cdot 5 = (6 + 4) \cdot 5$ \hfill por D — distributividade à direita
+            \item $(6 + 4) \cdot 5 = 10 \cdot 5$ \hfill pois $6 + 4 = 10$
+            \item $10 \cdot 5 = 5 \cdot 10$ \hfill por M2 — comutatividade da multiplicação
+            \item $5 \cdot 10 = 5 \cdot (8 + 2)$ \hfill pois $10 = 8 + 2$
+        \end{itemize}
+        
+        \item De $((7 + 6) + 5) + 0$ para $(4 + 7) + 7$.
+        
+        \textbf{Resolução:} Temos que
+        \begin{itemize}
+            \item $((7 + 6) + 5) + 0 = (7 + (6 + 5)) + 0$ \hfill por A1 — associatividade
+            \item $(7 + (6 + 5)) + 0 = 7 + ((6 + 5) + 0)$ \hfill por A1 — associatividade
+            \item $((6 + 5) + 0) = (6 + 5)$ \hfill por A3 — elemento neutro da adição
+            \item $7 + (6 + 5) = 7 + (4 + 7)$ \hfill pois $6 + 5 = 11 = 4 + 7$
+            \item $7 + (4 + 7) = (7 + 4) + 7$ \hfill por A1 — associatividade
+            \item $(7 + 4) + 7 = (4 + 7) + 7$ \hfill por A2 — comutatividade da adição
+        \end{itemize}
+        
+        \item De $a \cdot 3 + 4 + a \cdot 5$ para $12 \cdot a$. (Neste item, $a$ representa um número natural.)
+        
+        \textbf{Resolução:} Temos que
+        \begin{itemize}
+            \item $a \cdot 3 + 4 + a \cdot 5 = a \cdot 3 + a \cdot 5 + 4$ \hfill por A2 — comutatividade da adição
+            \item $a \cdot 3 + a \cdot 5 + 4 = a \cdot (3 + 5) + 4$ \hfill por D — distributividade à direita
+            \item $a \cdot (3 + 5) + 4 = a \cdot 8 + 4$ \hfill pois $3 + 5 = 8$
+            \item $a \cdot 8 + 4 = 12 \cdot a$ \hfill pois $8 = 12$
+        \end{itemize}
+    \end{enumerate}
+    
+    \vspace{1cm}
+    
+    \section*{5.}
+    Escreva uma demonstração para cada uma das seguintes proposições.
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Proposição (Unicidade do elemento neutro da multiplicação sobre $\mathbb{N}$).} 
+        Para qualquer número natural $e$, se para todo número natural $a$ tem-se que 
+        \[
+        a \cdot e = a \quad \text{e} \quad e \cdot a = a,
+        \]
+        então $e = 1$.
+        
+        \textbf{Demonstração.} Suponha que existe $e \in \mathbb{N}$ tal que, para todo $a \in \mathbb{N}$,
+        \[
+        a \cdot e = a \quad \text{e} \quad e \cdot a = a.
+        \]
+        
+        Queremos provar que $e = 1$.
+        
+        Tome $a \cdot e = a$. 
+        
+        Pelo axioma M3, temos que
+
+        \[
+        a \cdot e = a \cdot 1
+        \]
+
+        Entao, pelo axioma M2 de comutatividade, temos que
+
+        \[
+        e \cdot a = 1 \cdot a
+        \]
+
+        Logo, pelo axioma M4 de cancelamento, temos que
+
+        \[
+        e = 1
+        \]
+
+        \item \textbf{Proposição (Lei do cancelamento da multiplicação à esquerda).} Para quaisquer números naturais $a$ e $b$, para qualquer número natural não nulo $c$, se $c \cdot a = c \cdot b$, então $a = b$.
+        
+        \textbf{Demonstração.} Tome $a, b, c \in \mathbb{N}$ arbitrários. Suponha que
+        \[
+        c \cdot a = c \cdot b.
+        \]
+
+        Queremos provar que $a = b$.
+
+        Tome $c \cdot a = c \cdot b$. 
+
+        Pelo axioma M2 de comutatividade, temos que
+
+        \[
+        a \cdot c = b \cdot c
+        \]
+
+        Logo, pelo axioma M4 de cancelamento, temos que
+
+        \[
+        a = b
+        \]
+
+        
+        \item \textbf{Proposição.} Para quaisquer números naturais $a, b, c$, se $a = b$, então $a \cdot c = b \cdot c$.
+        
+        \textbf{Demonstração.} Tome $a, b, c \in \mathbb{N}$ arbitrários. Suponha que
+        
+        \[
+        a = b.
+        \]
+
+        Queremos provar que $a \cdot c = b \cdot c$.
+
+        Logo, pelo inverso do axioma M4 de cancelamento, temos que
+
+        \[
+        a \cdot c = b \cdot c
+        \]
+
+
+        \item \textbf{Proposição (Lei da distributividade à esquerda).} Para quaisquer números naturais $a, b, c$, tem-se que $a \cdot (b + c) = a \cdot b + a \cdot c$.
+        
+        \textbf{Demonstração.} Tome $a, b, c \in \mathbb{N}$ arbitrários. Suponha que
+        
+        \[
+        a \cdot (b + c) = a \cdot b + a \cdot c.
+        \]
+        
+        Queremos provar que $a \cdot (b + c) = a \cdot b + a \cdot c$.
+        
+        Logo, pelo axioma D de distributividade à direita, temos que
+        
+        \[
+            a \cdot b + a \cdot c = a \cdot b + a \cdot c
+        \]
+        
+        \item \textbf{Proposição.} Para qualquer número natural $a$, tem-se que $0 \cdot a = 0$.
+        
+        \textbf{Demonstração.} Tome $a \in \mathbb{N}$ arbitrário. Suponha que
+        
+        \[
+            0 \cdot a = 0
+        \]
+
+        \[
+            (0 + 0) \cdot a = 0
+        \]
+
+        Logo, pelo axioma D de distributividade à direita, temos que
+
+        \[
+            0 \cdot a + 0 \cdot a = 0
+        \]
+
+        Logo, pelo axioma A5 de soma zero só se ambos forem zero temos que
+
+        \[
+            0 \cdot a = 0
+        \]
+
+
+
+    \end{enumerate}
+
+
+\end{enumerate}
+
 
 \end{document}

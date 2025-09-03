@@ -1,0 +1,291 @@
+% chktex-file 8
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\graphicspath{{../../../../assets/}}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\newcommand{\universidade}{Universidade Federal de Santa Catarina}
+\newcommand{\centro}{Centro de Ciências Físicas e Matemáticas}
+\newcommand{\curso}{Curso de Matemática - Licenciatura}
+\newcommand{\disciplina}{Fundamentos da Aritmética}
+\newcommand{\professor}{Prof.\ Paulinho Demeneghi}
+\newcommand{\tutora}{Profa. Karina Gomez Pacheco}
+\newcommand{\autor}{João\ Lucas\ de\ Oliveira}
+\newcommand{\dataentrega}{31 de Agosto de 2025}
+
+\begin{document}
+
+\begin{center}
+    \includegraphics[width=3cm]{ufsc_logo}\\[0.3cm]
+    \textbf{\universidade}\\
+    \centro\\
+    \curso\\[1cm]
+    \disciplina\\
+    \textbf{Lista II — Ordem nos naturais}\\[0.5cm]
+    \textbf{Professor:} \professor\\
+    \textbf{Tutor:} \tutora\\
+    \textbf{Aluno:} \autor\\
+    \textbf{Data:} \dataentrega\\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Questão 1 -- Usando as definições de <, >, $\not<$, $\not>$, verifique se cada uma das sentenças abaixo é verdadeira ou falsa, fornecendo uma explicação formal para cada resposta. (Resolva sem usar tricotomia.)}
+
+    \begin{enumerate}[label= (\alph*)]
+        \item  3 < 8. - Verdadeiro, pois pela definição de $<$, temos que $3 < 8$ se, e somente se, existe $k \in \mathbb{N}^*$ tal que $3 + k = 8$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $3 + 5 = 8$. 
+        Portanto, a afirmação é verdadeira.
+
+        \vspace{0.5cm}
+
+        \item 3 > 8. - Falso, pois pela definição de $>$, temos que $3 > 8$ se, e somente se, existe $k \in \mathbb{N}^*$ tal que $8 + k = 3$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $8 + 5 = 13$. 
+        Portanto, a afirmação é falsa.
+
+        \vspace{0.5cm}
+
+        \item 3 $\not<$ 8. - Falso, pois pela definição de $\not<$, temos que $3 \not< 8$ se, e somente se, não existe $k \in \mathbb{N}^*$ tal que $3 + k = 8$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $3 + 5 = 8$. 
+        Portanto, a afirmação é falsa.
+
+        \vspace{0.5cm}
+
+        \item 3 $\not>$ 8. - Verdadeiro, pois pela definição de $\not>$, temos que $3 \not> 8$ se, e somente se, não existe $k \in \mathbb{N}^*$ tal que $8 + k = 3$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $8 + 5 = 13$. 
+        Portanto, a afirmação é verdadeira.
+
+    \end{enumerate}
+
+\section*{Questão 2 -- Escreva uma demonstração para cada uma das seguintes proposições, sem usar tricotomia.}
+
+    Cada proposição nos apresenta um fato novo e potencialmente útil a respeito dos números naturais.
+    Interprete com cuidado o que cada um diz, e incorpore-os ao seu conhecimento de Aritmética.
+
+    \begin{enumerate}[label= (\alph*)]
+        \item Proposição. Para quaisquer números naturais a, b e c, se a < b, então a + c < b + c.
+        
+        Suponha que $a < b$.
+
+        Então, existe $x \in \mathbb{N}^*$ tal que $b=a+x$.
+
+        Adicionando $c$ dos dois lados, temos que $b+c=a+x+c$.
+
+        Como $x \in \mathbb{N}^*$, então $x+c \in \mathbb{N}^*$.
+
+        Logo, $a+c < b+c$.
+
+        Portanto, a proposição é verdadeira.
+
+        \item Proposição. Para qualquer número natural a, tem-se que $a \nless a$.
+        
+        Por demonstração de absurdo, suponha que $a < a$.
+
+        Então, existe $x \in \mathbb{N}^*$ tal que $a=a+x$.
+
+        Logo, $x=0$.\ ou seja, contraria nossa suposição onde $x \in \mathbb{N}^*$.
+
+        Portanto, a proposição é verdadeira.
+
+        \item Proposição. Para quaisquer números naturais a, b, c e d, se a < b e c < d, então ac < bd.
+        
+        Suponha:
+
+        $a<b\Rightarrow b=a+x$, com $x\in\mathbb{N}^*$;
+
+        $c<d\Rightarrow d=c+y$, com $y\in\mathbb{N}^*$.
+
+        Logo, $bd=(a+x)(c+y)$.
+
+        Expandindo, temos que $bd=ac+ay+cx+xy$.
+
+        Como $x,y\in\mathbb{N}^*$, então $xy\in\mathbb{N}^*$.
+
+        Logo, $bd=ac+ay+cx+xy\in\mathbb{N}^*$.
+
+        Portanto, $ac<bd$.
+    \end{enumerate}
+
+\section*{Questão 3 -- Usando as definições de $\leq$, $\geq$, $\nleq$, $\ngeq$, verifique se cada uma das sentenças abaixo é verdadeira ou falsa, fornecendo uma explicação formal para cada resposta.}
+    
+    \begin{enumerate}[label= (\alph*)]
+        \item $3 \leq 8$ - Verdadeiro, pois $3 \leq 8$ se, e somente se, existe $k \in \mathbb{N}^*$ tal que $3 + k = 8$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $3 + 5 = 8$. 
+        Portanto, a afirmação é verdadeira.
+        
+        \item $3 \geq 8$ - Falso, pois $3 \geq 8$ se, e somente se, existe $k \in \mathbb{N}^*$ tal que $8 + k = 3$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $8 + 5 = 13$. 
+        Portanto, a afirmação é falsa.
+        
+        \item $3 \nleq 8$ - Falso, pois $3 \nleq 8$ se, e somente se, não existe $k \in \mathbb{N}^*$ tal que $3 + k = 8$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $3 + 5 = 8$. 
+        Portanto, a afirmação é falsa.
+        
+        \item $3 \ngeq 8$ - Falso, pois $3 \ngeq 8$ se, e somente se, não existe $k \in \mathbb{N}^*$ tal que $8 + k = 3$. 
+        Tomando $k = 5$, que pertence a $\mathbb{N}^*$, temos que $8 + 5 = 13$. 
+        Portanto, a afirmação é falsa.
+    \end{enumerate}
+
+\section*{Questão 4 -- Considere a sentença condicional: Para quaisquer números naturais a e b, se a $\nleq$ b, então a $\nless$ b.}
+
+    \begin{enumerate}[label= (\alph*)]
+        \item Identifique a contrapositiva dessa sentença condicional. Em seguida, prove que a contrapositiva é
+        uma sentença verdadeira.
+
+        A contrapositiva de uma condicional \( P \Rightarrow Q \) é \( \neg Q \Rightarrow \neg P \).
+
+        No caso:
+        \begin{itemize}
+            \item \( P \): \( a \nleq b \)
+            \item \( Q \): \( a \nless b \)
+        \end{itemize}
+        
+        Logo:
+        \begin{itemize}
+            \item \( \neg Q \): \( a \leq b \)
+            \item \( \neg P \): \( a < b \)
+        \end{itemize}
+        
+        Então, a contrapositiva é:
+        
+        Se \( a \leq b \), então \( a < b \).
+
+
+        \item Lembrando que uma sentença condicional e sua contrapositiva sempre têm o mesmo valor lógico, conclua que a sentença condicional (1) é verdadeira.
+        
+        \item Identifique a negação da sentença condicional (1).
+        A contrapositiva de uma condicional \( P \Rightarrow Q \) é \( \neg Q \Rightarrow \neg P \).
+
+        No caso:
+        \begin{itemize}
+            \item \( P \): \( a \nleq b \)
+            \item \( Q \): \( a \nless b \)
+        \end{itemize}
+
+        Logo:
+        \begin{itemize}
+            \item \( \neg Q \): \( a \leq b \)
+            \item \( \neg P \): \( a < b \)
+        \end{itemize}
+
+        Então, a contrapositiva é:
+
+        Se \( a \leq b \), então \( a < b \).
+
+
+        A negação de uma condicional
+
+        \item Lembrando que a negação de uma sentença verdadeira é uma sentença falsa, conclua que a negação
+        da sentença condicional (1) é falsa.
+
+        \[
+        \text{Se } a \not\leq b, \text{ então } a \not< b
+        \]
+        
+        Para negar uma condicional da forma \( P \Rightarrow Q \), utilizamos:
+        
+        \[
+        \neg(P \Rightarrow Q) \equiv P \land \neg Q
+        \]
+        
+        Aplicando à sentença (1), temos:
+        
+        \[
+        \neg(\text{Se } a \not\leq b \text{ então } a \not< b) \equiv a \not\leq b \land a < b
+        \]
+        
+        Entretanto, pela definição de \( a \leq b \), temos:
+        
+        \[
+        a \leq b \iff a < b \text{ ou } a = b
+        \]
+        
+        Logo, se \( a < b \), então \( a \leq b \) também é verdadeiro, o que contradiz \( a \not\leq b \).
+        
+        Portanto, a negação da sentença condicional é uma contradição.
+        
+        Logo, a sentença condicional (1) é verdadeira.
+
+        \item Identifique a recíproca da sentença condicional (1). Em seguida, determine o seu valor lógico.
+        (Lembre que uma condicional e sua recíproca podem ter valores lógicos diferentes.)
+        A recíproca de uma condicional \( P \Rightarrow Q \) é \( Q \Rightarrow P \).
+
+        No caso:
+        \begin{itemize}
+            \item \( Q \): \( a \nless b \)
+            \item \( P \): \( a \nleq b \)
+        \end{itemize}
+        
+        Portanto, a recíproca é:
+        \[
+        a \nless b \Rightarrow a \nleq b
+        \]
+        
+        Ou seja, a recíproca da sentença é diferente da original.
+        
+        Análise do valor lógico:
+        \begin{itemize}
+            \item Se \( a \nless b \) é falso, a implicação é verdadeira.
+            \item Se \( a \nless b \) é verdadeiro, então \( a \geq b \), o que implica \( a \nleq b \) é falso.
+            \item Portanto, a recíproca é falsa quando \( a = b \).
+        \end{itemize}
+        
+        Conclusão: A recíproca não é uma tautologia, pois existe pelo menos um caso em que ela é falsa (quando \( a = b \)).
+    \end{enumerate}
+
+\section*{Questão 5 -- Escreva uma demonstração para cada uma das seguintes proposições.}
+
+    \begin{enumerate}[label= (\alph*)]
+        \item Proposição. Para quaisquer números naturais a, b e c, se a $\leq$ b e b $\leq$ c, então a $\leq$ c
+
+        Pela definição de $a\leq b$, existe $x\in\mathbb{N}$ tal que $b=a+x$.
+
+        Logo, $a \leq b$ se, e somente se, existe $x \in \mathbb{N}$ tal que $b = a + x$.
+
+        Pela definição de $b \leq c$, existe $y \in \mathbb{N}$ tal que $c = b + y$.
+
+        Substituindo a equação de $b = a + x$ na de $c = b + y$, temos:
+        \[c = (a + x) + y = a + x + y.\]
+        
+        Logo, $a \leq c$ se, e somente se, existe $x \in \mathbb{N}$ tal que $c = a + x$.
+        
+    \item Proposição. Para quaisquer números naturais $a$, $b$ e $c$, se $a + c \leq b + c$, então $a \leq b$.
+        
+        Pela hipótese, $a + c \leq b + c$. Pela definição de $\leq$, existe $x \in \mathbb{N}$ tal que:
+        \[b + c = a + c + x.\]
+
+        Usando a lei da comutatividade da adição, temos que:
+        \[b + c = a + x + c.\]
+
+        Usando a lei do cancelamento da adição à direita, temos que:
+        \[b = a + x.\]
+        
+        Logo, $a \leq b$ se, e somente se, existe $x \in \mathbb{N}$ tal que $b = a + x$.
+        
+    \item Proposição. Para quaisquer números naturais $a$, $b$ e $c$, se $a < b$, então $ac \leq bc$.
+        
+        Como $a < b$, então pela definição:
+        \[\exists x \in \mathbb{N}^* \text{ tal que } b = a + x.\]
+
+        Multiplicando ambos os lados por $c$:
+        \[bc = (a + x)c = ac + xc.\]
+
+        Como $x \in \mathbb{N}^*$ e $c \in \mathbb{N}$, temos que:
+        \[xc \neq 0,\]
+        \[ac + xc > ac,\]
+        \[a \cdot c + x \cdot c > a \cdot c,\]
+        \[a \cdot c < b \cdot c.\]
+        
+        Logo, $a \cdot c < b \cdot c$, como queremos demonstrar.
+    \end{enumerate}
+    
+\end{document}

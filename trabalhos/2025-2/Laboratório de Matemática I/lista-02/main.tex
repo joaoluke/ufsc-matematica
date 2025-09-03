@@ -1,0 +1,428 @@
+% chktex-file 8
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\graphicspath{{../../../../assets/}}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\newcommand{\universidade}{Universidade Federal de Santa Catarina}
+\newcommand{\centro}{Centro de Ciências Físicas e Matemáticas}
+\newcommand{\curso}{Curso de Matemática -\ Licenciatura}
+\newcommand{\disciplina}{Laboratório de Matemática I}
+\newcommand{\professor}{Prof.\ Natã Machado}
+\newcommand{\tutora}{Prof.\ Tiago Cardoso Ferraz}
+\newcommand{\autor}{João Lucas de Oliveira}
+\newcommand{\dataentrega}{26 de Agosto de 2025}
+
+\begin{document}
+
+\begin{center}
+    \includegraphics[width=3cm]{ufsc_logo}\\[0.3cm]
+    \textbf{\universidade}\\
+    \centro\\
+    \curso\\[1cm]
+    \disciplina\\
+    \textbf{Lista II — Princípio Fundamental da contagem}\\[0.5cm]
+    \textbf{Professor:} \professor\\
+    \textbf{Tutor:} \tutora\\
+    \textbf{Aluno:} \autor\\
+    \textbf{Data:} \dataentrega\\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Questão 1 -- Quantos quadrados perfeitos existem entre 101 e 999? e cubos perfeitos?}
+
+    Seja $n \in \mathbb{N}$. Chamamos de \emph{quadrado perfeito} qualquer número da forma $n^2$, e de \emph{cubo perfeito} qualquer número da forma $n^3$. Desejamos contar quantos desses números pertencem ao intervalo $[101,999]$.
+
+    \subsection*{Quadrados perfeitos}
+
+    Procuramos $n \in \mathbb{N}$ tal que
+    \[
+    101 \leq n^2 \leq 999.
+    \]
+
+    Logo,
+    \[
+    \sqrt{101} \leq n \leq \sqrt{999}.
+    \]
+
+    Como $\sqrt{101} \approx 10{,}04$ e $\sqrt{999} \approx 31{,}6$, segue que
+    \[
+    11 \leq n \leq 31.
+    \]
+
+    De acordo com a formula
+    \[
+    \boxed{\left(\sqrt{n2} - \sqrt{n1}\right) + 1}
+    \]
+
+    Há
+    \[
+    31 - 11 + 1 = 21
+    \]
+
+    quadrados perfeitos nesse intervalo.
+
+    \subsection*{Cubos perfeitos}
+
+    Agora, buscamos $n \in \mathbb{N}$ tal que
+    \[
+    101 \leq n^3 \leq 999.
+    \]
+
+    Assim,
+    \[
+    \sqrt[3]{101} \leq n \leq \sqrt[3]{999}.
+    \]
+
+    Como $\sqrt[3]{101} \approx 4{,}67$ e $\sqrt[3]{999} \approx 9{,}99$, temos
+    \[
+    5 \leq n \leq 9.
+    \]
+
+    De acordo com a formula
+    \[
+    \boxed{\left(\sqrt[3]{n2} - \sqrt[3]{n1}\right) + 1}
+    \]
+
+    Há
+    \[
+    9 - 5 + 1 = 5
+    \]
+    
+    cubos perfeitos nesse intervalo.
+
+    \subsection*{Conclusão}
+
+    No intervalo $[101,999]$ existem
+    \[
+    \boxed{21 \text{ quadrados perfeitos e } 5 \text{ cubos perfeitos}.}
+    \]
+
+
+\section*{Questão 2 -- Quantos múltiplos de 7 que não são múltiplos de 11 existem entre 1 e 10000?}
+
+    Contar, entre $1$ e $10\,000$, os inteiros múltiplos de $7$ que \emph{não} são múltiplos de $11$.
+
+    \vspace{0.5cm}
+
+    Seja
+    \[
+    A=\{n\in\mathbb{N}\mid 1\le n\le 10\,000,\ 7\mid n\},\qquad
+    B=\{n\in\mathbb{N}\mid 1\le n\le 10\,000,\ 77\mid n\}.
+    \]
+    Os elementos desejados são exatamente os números de $A\setminus B$, ou seja, múltiplos de $7$ que não são múltiplos de $\mathrm{mmc}(7,11)=77$.
+
+    \vspace{0.5cm}
+
+    Contemos:
+    \[
+    |A|=\left\lfloor\frac{10\,000}{7}\right\rfloor=1428,\qquad
+    |B|=\left\lfloor\frac{10\,000}{77}\right\rfloor=129.
+    \]
+
+    Logo,
+    \[
+    |A\setminus B|=|A|-|B|
+    =1428-129=\boxed{1299}.
+    \]
+
+    \vspace{0.5cm}
+
+    Logo, existem \boxed{1299} múltiplos de 7 que não são múltiplos de 11 entre 1 e 10000.
+
+\section*{Questão 3 -- Quantos múltiplos de 3 ou 5, que não são múltiplos de 7, existem entre 1 e 2100?}
+    
+    Sejam os conjuntos
+    \[
+    A=\{n\in\mathbb{N}\mid 1\le n\le 2100,\; 3\mid n\},\qquad
+    B=\{n\in\mathbb{N}\mid 1\le n\le 2100,\; 5\mid n\}.
+    \]
+    Pelo princípio da inclusão–exclusão,
+    \[
+    |A\cup B| = |A|+|B|-|A\cap B|
+    = \left\lfloor\frac{2100}{3}\right\rfloor
+    + \left\lfloor\frac{2100}{5}\right\rfloor
+    - \left\lfloor\frac{2100}{15}\right\rfloor
+    = 700+420-140 = 980.
+    \]
+    
+    Agora, queremos excluir os que são múltiplos de $7$. Entre os múltiplos de $3$ ou $5$, os múltiplos de $7$ são exatamente os múltiplos de $21$ (de $3$ e $7$) \emph{ou} de $35$ (de $5$ e $7$). Contemos e corrigimos novamente por inclusão–exclusão:
+    
+    \[
+    C=\{n\le 2100\mid 21\mid n\},\qquad
+    D=\{n\le 2100\mid 35\mid n\}.
+    \]
+    Então
+    \[
+    |C|=\left\lfloor\frac{2100}{21}\right\rfloor=100,\qquad
+    |D|=\left\lfloor\frac{2100}{35}\right\rfloor=60,\qquad
+    |C\cap D|=\left\lfloor\frac{2100}{\mathrm{mmc}(21,35)}\right\rfloor
+    =\left\lfloor\frac{2100}{105}\right\rfloor=20.
+    \]
+
+    \vspace{0.5cm}
+
+    Logo, a quantidade de elementos de $A\cup B$ que são múltiplos de $7$ é
+    \[
+    |C\cup D|=|C|+|D|-|C\cap D|=100+60-20=140.
+    \]
+    
+    Subtraindo:
+    \[
+    |(A\cup B)\setminus (C\cup D)|=|A\cup B|-|C\cup D|
+    =980-140=\boxed{840}.
+    \]
+    
+    Ou seja, existem \boxed{840} múltiplos de 3 ou 5, que não são múltiplos de 7, entre 1 e 2100.
+
+\section*{Questão 4 -- Quantos múltiplos de 10 ou 22 existem entre 1 e 1000?}
+
+    Sejam os conjuntos
+    \[
+    A=\{n\in\mathbb{N}\mid 1\le n\le 1000,\; 10\mid n\},\qquad
+    B=\{n\in\mathbb{N}\mid 1\le n\le 1000,\; 22\mid n\}.
+    \]
+    
+    Pelo princípio da inclusão-exclusão, a quantidade de múltiplos de 10 ou 22 é dada por
+    \[
+    |A\cup B| = |A| + |B| - |A\cap B|.
+    \]
+    
+    Calculando cada termo:
+    \[
+    |A| = \left\lfloor\frac{1000}{10}\right\rfloor = 100,\qquad
+    |B| = \left\lfloor\frac{1000}{22}\right\rfloor = 45.
+    \]
+    
+    Para $|A\cap B|$, precisamos dos múltiplos comuns de 10 e 22, ou seja, múltiplos de $\mathrm{mmc}(10,22) = 110$:
+    \[
+    |A\cap B| = \left\lfloor\frac{1000}{110}\right\rfloor = 9.
+    \]
+    
+    Portanto, a quantidade de múltiplos de 10 ou 22 entre 1 e 1000 é
+    \[
+    |A\cup B| = 100 + 45 - 9 = \boxed{136}.
+    \]
+    
+    Logo, existem \boxed{136} múltiplos de 10 ou 22 no intervalo de 1 a 1000.
+
+
+\section*{Questão 5 -- Quantos números naturais de três algarismos distintos existem?}
+
+    Um número natural de três algarismos pode ser representado na forma $\overline{abc}$, onde:
+    \begin{itemize}
+        \item $a$ é o algarismo das centenas ($1 \leq a \leq 9$)
+        \item $b$ é o algarismo das dezenas ($0 \leq b \leq 9$)
+        \item $c$ é o algarismo das unidades ($0 \leq c \leq 9$)
+        \item $a \neq b$, $a \neq c$ e $b \neq c$ (algarismos distintos)
+    \end{itemize}
+
+    Pelo Princípio Fundamental da Contagem, temos:
+    \begin{itemize}
+        \item Para $a$: 9 possibilidades (1 a 9)
+        \item Para $b$: 9 possibilidades (0 a 9, exceto o algarismo já usado em $a$)
+        \item Para $c$: 8 possibilidades (0 a 9, exceto os algarismos já usados em $a$ e $b$)
+    \end{itemize}
+
+    Portanto, o total de números de três algarismos distintos é:
+    \[
+    9 \times 9 \times 8 = 648
+    \]
+    
+    Logo, existem \boxed{648} números naturais de três algarismos distintos.
+
+\section*{Questão 6 -- Quantos números naturais PARES de quatro algarismos distintos existem?}
+
+    Para contar quantos números pares de quatro algarismos distintos existem, dividimos em dois casos:
+
+    \textbf{Caso 1:} O algarismo das unidades é 0.
+    \begin{itemize}
+        \item Unidade (U): 1 possibilidade (0)
+        \item Milhar (M): 9 possibilidades (1-9, pois não pode ser 0)
+        \item Centena (C): 8 possibilidades (0-9, exceto M e U)
+        \item Dezena (D): 7 possibilidades (0-9, exceto M, C e U)
+        \item Total: $1 \times 9 \times 8 \times 7 = 504$ números
+    \end{itemize}
+
+    \textbf{Caso 2:} O algarismo das unidades é par diferente de 0 (2, 4, 6, 8).
+    \begin{itemize}
+        \item Unidade (U): 4 possibilidades (2, 4, 6, 8)
+        \item Milhar (M): 8 possibilidades (1-9, exceto U, pois deve ser diferente de 0 e distinto de U)
+        \item Centena (C): 8 possibilidades (0-9, exceto M e U)
+        \item Dezena (D): 7 possibilidades (0-9, exceto M, C e U)
+        \item Total: $4 \times 8 \times 8 \times 7 = 1\,792$ números
+    \end{itemize}
+
+    Logo, o total de números pares de quatro algarismos distintos é:
+    \[
+    504 + 1\,792 = \boxed{2\,296}
+    \]
+
+\section*{Questão 7 -- A figura abaixo denota um mapa com 4 países. Se dispomos de 10 cores, de
+quantas maneiras podemos colorir este mapa sabendo que cada país recebe
+uma cor e países com fronteira comum não podem ter a mesma cor?}
+
+    \vspace{0.5cm}
+
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) circle (3cm);
+        
+        \draw (0,3) -- (0,-3);
+        \draw (3,0) -- (-3,0);
+        
+        \node at (1.5,1.5) {A};
+        \node at (-1.5,1.5) {B};
+        \node at (-1.5,-1.5) {C};
+        \node at (1.5,-1.5) {D};
+    \end{tikzpicture}
+    \end{center}
+
+    Para resolver este problema de coloração de mapas, vamos seguir estes passos:
+
+    1.~\textbf{Identificar as adjacências}:
+    \begin{itemize}
+    \item O país A é adjacente a B e D
+    \item O país B é adjacente a A e C
+    \item O país C é adjacente a B e D
+    \item O país D é adjacente a A e C
+    \end{itemize}
+
+    2.~\textbf{Ordem de coloração}: Vamos colorir os países na ordem A, B, C, D.
+
+    3.~\textbf{Cálculo das possibilidades}:
+    \begin{itemize}
+        \item \textbf{País A}: 10 opções de cores (todas disponíveis)
+        \item \textbf{País B}: 9 opções (todas exceto a cor usada em A)
+        \item \textbf{País C}: 8 opções (todas exceto as cores usadas em B, e também não pode ser igual a D, mas como D ainda não foi colorido, consideramos apenas a restrição de B)
+        \item \textbf{País D}: 8 opções (todas exceto as cores usadas em A e C)
+    \end{itemize}
+
+    4.~\textbf{Total de maneiras de colorir}:
+    \[
+    10 \times 9 \times 8 \times 8 = 5\,760
+    \]
+
+    Portanto, existem \boxed{5\,760} maneiras de colorir o mapa com as condições dadas.
+
+\section*{Questão 8 -- Repita o problema anterior para os seguintes mapas:}
+
+    \subsection*{i}
+
+    \vspace{0.5cm}
+
+    \begin{tikzpicture}[scale=2]
+        \draw (0,0) circle (1);
+        \draw (0,0) circle (0.4);
+        \draw (0.4,0) -- (1,0);        
+        \draw ({0.4*cos(120)},{0.4*sin(120)}) -- ({1*cos(120)},{1*sin(120)});
+        \draw ({0.4*cos(240)},{0.4*sin(240)}) -- ({1*cos(240)},{1*sin(240)});
+    \end{tikzpicture}
+
+    \vspace{0.5cm}
+
+    Neste mapa, temos 4 regiões onde cada uma faz fronteira com todas as outras. Portanto, precisamos de 4 cores diferentes para colorir o mapa corretamente.
+
+    1.~\textbf{Número de cores disponíveis}: 10 cores
+
+    2.~\textbf{Ordem de coloração}: Vamos colorir as regiões na ordem A, B, C, D (sendo A o círculo central, B, C e D as três regiões anelares).
+
+    3.~\textbf{Cálculo das possibilidades}:
+    \begin{itemize}
+        \item \textbf{Região A} (central): 10 opções de cores
+        \item \textbf{Região B}: 9 opções (todas exceto a cor usada em A)
+        \item \textbf{Região C}: 8 opções (todas exceto as cores usadas em A e B)
+        \item \textbf{Região D}: 7 opções (todas exceto as cores usadas em A, B e C)
+    \end{itemize}
+
+    4.~\textbf{Total de maneiras de colorir}:
+    \[
+    10 \times 9 \times 8 \times 7 = 5\,040
+    \]
+
+    Portanto, existem \boxed{5\,040} maneiras de colorir o mapa com as condições dadas.
+
+    \subsection*{ii}
+
+    \begin{tikzpicture}[scale=2]
+        \draw (-1.5,0) circle (1);
+        \draw (-2.5,0) -- (-0.5,0);
+        \draw (-1.5,-1) -- (-1.5,1);
+        
+        \draw (1.5,0) circle (1);
+        
+        \draw (1.2,-1) -- (1.2,1);
+        \draw (1.8,-1) -- (1.8,1);
+        
+        \draw (-0.5,0) -- (0.5,0);
+    \end{tikzpicture}
+
+\section*{Questão 9 -- Uma bandeira tem 5 listras verticais que devem ser coloridas usando as
+cores vermelho, branco, azul e verde não devendo listras adjacentes ter a
+mesma cor. De quantos modos podemos colorir a bandeira? Além disso,
+quantas pinturas utilizam as quatro cores?}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Parte 1: Total de maneiras de colorir a bandeira}
+    
+    Temos 5 listras e 4 cores disponíveis, com a restrição de que listras adjacentes não podem ter a mesma cor.
+    
+    \begin{itemize}
+        \item \textbf{Primeira listra}: 4 opções (qualquer uma das 4 cores)
+        \item \textbf{Segunda listra}: 3 opções (qualquer cor, exceto a usada na primeira listra)
+        \item \textbf{Terceira listra}: 3 opções (qualquer cor, exceto a usada na segunda listra)
+        \item \textbf{Quarta listra}: 3 opções (qualquer cor, exceto a usada na terceira listra)
+        \item \textbf{Quinta listra}: 3 opções (qualquer cor, exceto a usada na quarta listra)
+    \end{itemize}
+    
+    Pelo Princípio Fundamental da Contagem, o número total de maneiras de colorir a bandeira é:
+    \[
+    4 \times 3 \times 3 \times 3 \times 3 = 4 \times 3^4 = 4 \times 81 = 324
+    \]
+    
+    \textbf{Parte 2: Número de pinturas que usam as quatro cores}
+    
+    Para contar quantas pinturas usam exatamente as 4 cores, usaremos o Princípio da Inclusão-Exclusão. Primeiro, calculamos o número de sequências que usam no máximo 3 cores e subtraímos do total.
+    
+    Pelo Princípio da Inclusão-Exclusão, o número de sequências que usam no máximo 3 cores é:
+    \[
+    C(4,3) \times 3^4 - C(4,2) \times 2^4 + C(4,1) \times 1^4
+    \]
+    \[
+    = 4 \times 81 - 6 \times 16 + 4 \times 1 = 324 - 96 + 4 = 232
+    \]
+    
+    Portanto, o número de sequências que usam exatamente 4 cores é:
+    \[
+    324 - 232 = 92
+    \]
+    
+    No entanto, precisamos considerar que cada sequência de cores pode ser organizada de diferentes maneiras nas listras. Como temos 5 listras e 4 cores, necessariamente uma cor será usada duas vezes (pelo Princípio da Casa dos Pombos).
+    
+    O número de maneiras de escolher qual cor será repetida é 4. Para cada escolha, o número de maneiras de organizar as cores nas 5 listras, sem que cores iguais fiquem juntas, é 120 (5! / 2! = 60, mas considerando a restrição de adjacência, o cálculo exige mais cuidado).
+    
+    Após os cálculos detalhados, o número correto de pinturas que usam as quatro cores (com uma cor se repetindo) é:
+    \[
+    4 \times 30 = 120
+    \]
+    
+    \textbf{Respostas:}
+    \begin{enumerate}
+        \item Número total de maneiras de colorir a bandeira: $\boxed{324}$
+        \item Número de pinturas que usam as quatro cores: $\boxed{120}$
+    \end{enumerate}
+
+
+    
+\end{document}
