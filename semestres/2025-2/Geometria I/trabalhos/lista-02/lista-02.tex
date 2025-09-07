@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\graphicspath{{../../../../../assets/}}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\newcommand{\universidade}{Universidade Federal de Santa Catarina}
+\newcommand{\centro}{Centro de Ciências Físicas e Matemáticas}
+\newcommand{\curso}{Curso de Matemática - Licenciatura}
+\newcommand{\disciplina}{Geometria I}
+\newcommand{\professor}{Prof. Marcelo Sobottka}
+\newcommand{\tutor}{Prof. Marcos Fabiano Firbida Eduardo}
+\newcommand{\autor}{João Lucas de Oliveira}
+\newcommand{\dataentrega}{Setembro de 2025}
+
+\begin{document}
+
+\begin{center}
+    \includegraphics[width=3cm]{ufsc_logo}\\[0.3cm]
+    \textbf{\universidade}\\
+    \centro\\
+    \curso\\[1cm]
+    \disciplina{}\\
+    \textbf{Lista II} -- Axiomas de Incid\^encia, Ordem, Medi\c{c}\~ao de Segmento, Medi\c{c}\~ao de \^angulo\\[0.5cm]
+    \textbf{Professor:} \professor{}\\
+    \textbf{Tutor:} \tutor{}\\
+    \textbf{Aluno:} \autor{}\\
+    \textbf{Data:} \dataentrega{}
+\end{center}
+
+\vspace{1cm}
+
+\section*{Questão 1 -- Para cada caso abaixo, indique quais dos axiomas são (ou podem ser) satisfeitos e quais não podem ser satisfeitos:}
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[scale=3, line cap=round, line join=round]
+        \def\R{1}
+        \def\a{0.5}
+        \def\phi{35}
+        \draw[thick] (-\R,0) arc[start angle=180, end angle=0, radius=\R];
+        \draw[dotted, thick, domain=0:360, samples=200]
+            plot ({\R*cos(\x)}, {\a*\R*sin(\x)});
+        \begin{scope}[rotate=\phi]
+            \draw[red, very thick, domain=-60:60, samples=100]
+            plot ({0.98*\R*cos(\x)}, {0.55*\R*sin(\x)});
+        \end{scope}
+        \fill[red] (-0.80,0) circle(0.015);
+        \fill[red] (0.40,0.72) circle(0.015);
+        \end{tikzpicture}
+        \caption{Semi-esfera, equador pontilhado e reta (arco de círculo máximo) em vermelho.}
+    \end{figure}
+  
+    \begin{enumerate}[label= (\roman*)]
+        \item  $A < B$.
+
+        \item  $A > B$.
+
+        \item  $A \not< B$.
+
+        \item  $A \not> B$.
+
+    \end{enumerate}
+
+\end{document}
