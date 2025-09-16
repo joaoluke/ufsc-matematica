@@ -18,6 +18,8 @@
 \newcommand{\curso}{Curso de Matemática - Licenciatura}
 \newcommand{\disciplina}{Fundamentos da Aritmética}
 \newcommand{\professor}{Prof.\ Paulinho Demeneghi}
+
+\newcommand{\answer}[1]{\begin{quote}#1\end{quote}}
 \newcommand{\tutora}{Profa. Karina Gomez Pacheco}
 \newcommand{\autor}{João\ Lucas\ de\ Oliveira}
 \newcommand{\dataentrega}{08 de Setembro de 2025}
@@ -30,7 +32,7 @@
     \centro\\
     \curso\\[1cm]
     \disciplina\\
-    \textbf{Lista III — Divisibilidade nos naturais}\\[0.5cm]
+    \textbf{Lista III --- Divisibilidade nos naturais}\\[0.5cm]
     \textbf{Professor:} \professor\\
     \textbf{Tutor:} \tutora\\
     \textbf{Aluno:} \autor\\
@@ -39,5 +41,140 @@
 
 \vspace{1cm}
 
+\section*{Questão 1 -- Prove que as seguintes sentenças são verdadeiras:}
+
+    \begin{enumerate}[label= (\alph*)]
+        \item $5$ é mínimo do conjunto $S = \{44, 12, 27, 5\}$.
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item $5$ é o mínimo do conjunto, pois:
+                    \begin{itemize}
+                        \item $5 \leq 12$, pois $12 = 5 + 7$.
+                        \item $5 \leq 27$, pois $27 = 5 + 22$.
+                        \item $5 \leq 44$, pois $44 = 5 + 39$.
+                    \end{itemize}
+            \end{itemize}
+        }
+        \item $44$ não é mínimo do conjunto $S = \{44, 12, 27, 5\}$.
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item $\neg (44 \leq 12)$, pois $12 \neq 44 + x$.
+            \end{itemize}
+        }
+    \end{enumerate}
+
+\section*{Questão 2 -- Dados $S$ um subconjunto de $\mathbb{N}$ e $m$ um elemento de $S$ quaisquer, dizemos que $m$ é um máximo de $S$ caso a seguinte sentença seja verdadeira:}
+ \begin{quote}
+    Dados $S$ um subconjunto de $\mathbb{N}$ e $m$ um elemento de $S$ quaisquer, dizemos que $m$ é um máximo de $S$ caso a seguinte sentença seja verdadeira:
+ \end{quote}
+    \answer{
+        \textbf{Resposta:}
+        \begin{enumerate}[label= (\alph*)]
+            \item Unicidade: suponha que $m$ e $m'$ sejam máximos de $S$. Como $m$ é máximo, para todo $x \in S$ vale $x \leq m$; em particular, $m' \leq m$. Analogamente, de $m'$ ser máximo, obtemos $m \leq m'$. Logo, $m = m'$. Portanto, pela propriedade antissimétrica, temos que $m = m'$.
+            \item Exemplo sem máximo: $S = \left\{x, y \in \mathbb{N} \mid x = 2 \cdot y + 0\right\}$ apenas os pares.
+        \end{enumerate}
+    }
+
+\section*{Questão 3 -- Explique por que 5 é um divisor de 30.}
+    \answer{
+        \textbf{Resposta:}
+        Pela definição, $5 \mid 30$ se existe $k \in \mathbb{N}$ tal que $30 = 5k$. Como $30 = 5 \cdot 6$, basta tomar $k=6$. Logo, $5 \mid 30$.
+    }
+
+\section*{Questão 4 -- Explique por que 3 não divide 5.}
+Dica: Verifique que 3 | 3 e que 2 < 3 combinado ao fato de que 5 = 3 + 2.
+    \answer{
+        \textbf{Resposta:}
+        Se $3 \mid 5$, então existiria $k \in \mathbb{N}$ tal que $5 = 3k$. Pela divisão euclidiana, $5 = 3\cdot 1 + 2$ com resto $2 \ne 0$, logo tal $k$ não existe. Equivalentemente, de $5 = 3 + 2$ e do fato de que múltiplos de $3$ são fechados por soma, concluiríamos que $2$ seria múltiplo de $3$, o que é falso pois $0 < 2 < 3$. Portanto, $3 \nmid 5$.
+    }
+
+\section*{Questão 5 -- Decida o valor lógico de cada uma das sentenças abaixo, apresentando demonstrações que suportem suas conclusões.}
+    \begin{enumerate}[label= (\alph*)]
+        \item 0 é múltiplo de 16.
+        \item 16 divide 0.
+        \item 0 é divisor de 16.
+        \item 16 não é divisível por 0.
+    \end{enumerate}
+    \answer{\textbf{Resposta:}
+        \begin{enumerate}[label= (\alph*)]
+            \item Verdadeiro. Por definição, $0$ é múltiplo de $16$ pois $0 = 16 \cdot 0$.
+            \item Verdadeiro. Temos $16 \mid 0$ porque $0 = 16 \cdot 0$.
+            \item Falso. Dizer $0 \mid 16$ significaria existir $k \in \mathbb{N}$ com $16 = 0 \cdot k$, o que é impossível.
+            \item Verdadeiro. Não existe $k \in \mathbb{N}$ tal que $16 = 0 \cdot k$; logo $16$ não é divisível por $0$.
+        \end{enumerate}
+    }
+
+\section*{Questão 6 -- Para quaisquer números naturais $a$ e $b$, se $a | b$ e $a \neq 0$, então existe um único número natural $c$ de modo que $b = ac$.}
+Observação: repare que a existência de um tal número natural $c$ é dada pela definição de $a | b$. O
+“novo” aqui é a unicidade.
+    \answer{\textbf{Resposta (unicidade):}
+        Se $b = a c$ e também $b = a d$ com $c,d \in \mathbb{N}$ e $a \ne 0$, então $a c = a d$. Pela lei do cancelamento em $\mathbb{N}$ (ou, equivalentemente, como não há divisores de zero em $\mathbb{N}$), conclui-se que $c = d$. Logo, tal $c$ é único.
+    }
+
+\section*{Questão 7 -- Escreva uma demonstração para cada uma das seguintes proposições.}
+
+    \begin{enumerate}[label= (\alph*)]
+        \item \textbf{Proposição.} Para qualquer número natural $a$, se $a$ é divisível por $18$, então $a$ é divisível por $3$.
+
+        \item \textbf{Proposição.} Para quaisquer números naturais $a$, $b$ e $c$, se $a | b$, então $a | (bc)$.
+
+        \item \textbf{Proposição.} Para quaisquer números naturais $a$, $b$ e $c$, se $a | b$ e $a | c$, então para quaisquer números naturais $x$ e $y$ tem-se que $a | (bx + cy)$.
+    \end{enumerate}
+    \answer{\textbf{Resposta:}
+        \begin{enumerate}[label= (\alph*)]
+            \item Se $18 \mid a$, então existe $k$ com $a = 18k = (3\cdot 6)k = 3(6k)$; logo $3 \mid a$.
+            \item Se $a \mid b$, escreva $b = a k$. Então $bc = a (k c)$, isto é, $a \mid bc$.
+            \item Se $a \mid b$ e $a \mid c$, existem $k,\ell$ tais que $b = a k$ e $c = a \ell$. Para quaisquer $x,y$, temos $bx + cy = a(kx) + a(\ell y) = a\,(kx + \ell y)$; portanto, $a \mid (bx + cy)$.
+        \end{enumerate}
+    }
+
+\section*{Questão 8 -- Se um número natural é divisor de um produto, podemos afirmar que ele é também divisor dos fatores? Justifique.}
     
+    \answer{\textbf{Resposta:} Não, apenas nos casos de números primos onde temos o Lema de Euclides: 
+        \[
+        \text{Se } p \text{ é primo e } p \mid (ab), \text{ então } p \mid a \text{ ou } p \mid b.
+        \]
+        
+        Mas se ele não for primo pode falhar, como no caso do
+        
+        \[
+        2 \mid (3 \cdot 4) \quad \text{onde} \quad 3 \cdot 4 = 12, \quad \text{e} \quad 2 \mid 12.
+        \]
+        
+        Mas 
+        
+        \[
+        2 \nmid 3.
+        \]
+    }
+    
+
+\section*{Questão 9 -- Se um número natural é divisor de uma soma, podemos afirmar que ele é também divisor das parcelas? Justifique.}
+
+    \answer{\textbf{Resposta:} Não, em geral não podemos afirmar isso.  
+        Exemplo: 
+        
+        \[
+        4 \mid (6 + 2) \quad \text{pois } 6+2 = 8 \quad \text{e} \quad 4 \mid 8,
+        \]
+        
+        mas 
+        
+        \[
+        4 \nmid 6 \quad \text{e} \quad 4 \nmid 2.
+        \]
+        
+        Portanto, se \(a \mid (b+c)\), não podemos concluir que \(a \mid b\) nem que \(a \mid c\).  
+        
+        A única afirmação verdadeira é a seguinte:  
+        
+        \[
+        \text{Se } a \mid b \text{ e } a \mid c, \quad \text{então } a \mid (b+c).
+        \]
+        
+        Ou seja, a recíproca não é válida.
+    }
+
 \end{document}

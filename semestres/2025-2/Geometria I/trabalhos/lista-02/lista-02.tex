@@ -11,13 +11,16 @@
 \usepackage{setspace}
 \usepackage{amsmath, amssymb}
 \usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{answer}{gray}{0.5}
+\newcommand{\answer}[1]{\textcolor{answer}{#1}}
 
-\newcommand{\universidade}{Universidade Federal de Santa Catarina}
+\newcommand{\universidade}{Universidade Federal de Santa Catarina}%
 \newcommand{\centro}{Centro de Ciências Físicas e Matemáticas}
-\newcommand{\curso}{Curso de Matemática - Licenciatura}
+\newcommand{\curso}{Curso de Matemática -\ Licenciatura}
 \newcommand{\disciplina}{Geometria I}
-\newcommand{\professor}{Prof. Marcelo Sobottka}
-\newcommand{\tutor}{Prof. Marcos Fabiano Firbida Eduardo}
+\newcommand{\professor}{Prof.\ Marcelo Sobottka}
+\newcommand{\tutor}{Prof.\ Marcos Fabiano Firbida Eduardo}
 \newcommand{\autor}{João Lucas de Oliveira}
 \newcommand{\dataentrega}{Setembro de 2025}
 
@@ -29,7 +32,7 @@
     \centro\\
     \curso\\[1cm]
     \disciplina{}\\
-    \textbf{Lista II} -- Axiomas de Incid\^encia, Ordem, Medi\c{c}\~ao de Segmento, Medi\c{c}\~ao de \^angulo\\[0.5cm]
+    \textbf{Lista II} --- Axiomas de Incid\^encia, Ordem, Medi\c{c}\~ao\ de Segmento, Medi\c{c}\~ao\ de\ \^angulo\\[0.5cm]
     \textbf{Professor:} \professor{}\\
     \textbf{Tutor:} \tutor{}\\
     \textbf{Aluno:} \autor{}\\
@@ -38,35 +41,221 @@
 
 \vspace{1cm}
 
-\section*{Questão 1 -- Para cada caso abaixo, indique quais dos axiomas são (ou podem ser) satisfeitos e quais não podem ser satisfeitos:}
-    \begin{figure}[h]
-        \centering
-        \begin{tikzpicture}[scale=3, line cap=round, line join=round]
-        \def\R{1}
-        \def\a{0.5}
-        \def\phi{35}
-        \draw[thick] (-\R,0) arc[start angle=180, end angle=0, radius=\R];
-        \draw[dotted, thick, domain=0:360, samples=200]
-            plot ({\R*cos(\x)}, {\a*\R*sin(\x)});
-        \begin{scope}[rotate=\phi]
-            \draw[red, very thick, domain=-60:60, samples=100]
-            plot ({0.98*\R*cos(\x)}, {0.55*\R*sin(\x)});
-        \end{scope}
-        \fill[red] (-0.80,0) circle(0.015);
-        \fill[red] (0.40,0.72) circle(0.015);
-        \end{tikzpicture}
-        \caption{Semi-esfera, equador pontilhado e reta (arco de círculo máximo) em vermelho.}
-    \end{figure}
-  
+\section*{Questão 1 --- Para cada caso abaixo, indique quais dos axiomas são (ou podem ser) satisfeitos e quais não podem ser satisfeitos:}
     \begin{enumerate}[label= (\roman*)]
-        \item  $A < B$.
+        \item \textbf{PLANO}: semi-esfera sem a linha do equador;
+        \textbf{RETAS}: arcos de círculo máximo contidos na semi-esfera.
+        
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim, temos pontos pertencentes a retas e pontos não perntencem a reta e uma reta nunca sera o plano todo.
+                \item \textbf{Axioma I2:} Não, pois caso tenha dois pontos alinhados horizontalmente, não existe uma reta que os contenha.
+                \item \textbf{Axioma II1:} Sim, pois não temos um círculo completo, para que possa existir uma nova ordenação de cada reta.
+                \item \textbf{Axioma II2:} Sim, pois como a linha do equador não pertence ao nosso plano sempre poderemos ter um ponto D além do nosso ponto B.
+                \item \textbf{Axioma II3:} Sim, pois cada reta é um arco passando pelo nosso ponto central, isso faz com que cada plano seja 1/4 de uma esfera.
+            \end{itemize}
+        }
 
-        \item  $A > B$.
+        \item \textbf{PLANO}: conjunto Q dos números racionais;
+        \textbf{RETAS}: subconjuntos de Q que possuem exatamente dois elementos.
 
-        \item  $A \not< B$.
+        \vspace{1cm}
 
-        \item  $A \not> B$.
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim.\@ Dados dois pontos distintos $a \neq b \in Q$, a reta que os contém é unicamente o conjunto $\{a,b\}$.
+                \item \textbf{Axioma I2:} Sim.\@ Por definição, cada reta tem exatamente dois pontos.
+                \item \textbf{Axioma II1:} Sim (vacuamente).\@ Como nenhuma reta possui três pontos, não há triplas colineares com relação de “entre” a verificar; assim, as propriedades condicionais do axioma ficam satisfeitas.
+                \item \textbf{Axioma II2:} Não. Dado $A \neq B$, a reta $AB$ contém apenas $A$ e $B$, logo não existe $C$ na reta com $B$ entre $A$ e $C$.
+                \item \textbf{Axioma II3:} Sim (vacuamente).\@ Como não há três pontos colineares numa mesma reta, a afirmação “entre três pontos colineares, exatamente um está entre os outros dois” não tem casos a contradizer.
+            \end{itemize} 
+        }
+    
+        \item \textbf{PLANO}: \emph{esfera};\@ 
+        \textbf{RETAS}: \emph{arcos de círculo máximo}.
 
+        \begin{figure}[h!]
+            \centering
+            \begin{tikzpicture}[scale=1]
+              \draw[line width=0.9pt] (0,0) circle (3cm);
+            
+              \draw[red, line width=1.2pt]
+                (0,0) ellipse [x radius=1cm, y radius=3cm, start angle=90, end angle=270];
+            
+              \draw[red, line width=1.2pt, dashed]
+                (0,0) ellipse [x radius=1cm, y radius=3cm, start angle=270, end angle=450];
+            \end{tikzpicture}
+        \end{figure}
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Existem retas (arcos de círculos máximos) com infinitos pontos; existem pontos do plano que não pertencem a uma mesma reta; e nenhuma reta coincide com o plano todo.
+                \item \textbf{Axioma I2:} Não. Por dois pontos distintos não passa uma única reta: se não são antipodais, no círculo máximo comum há dois arcos (menor e maior); se são antipodais, há infinitos círculos máximos que os contêm.
+                \item \textbf{Axioma II1:} Não. Pois como temos um arco dado os Pontos A, B e C, podemos ordenar os pontos em A, B e C, e também em B, C e A ou C, A e B.
+                \item \textbf{Axioma II2:} Sim (vacuamente). Pois dado dois pontos $A$ e $B$ de um arco sempre teremos um ponto $C$ que esta entre os dois e outro $D$ que faz com que $B$ esteja entre $A$ e $D$, mas isso sempre depende da direção da nossa reta, pois caso a direção seja contrario nossa logica deve ser invertida também.
+                \item \textbf{Axioma II3:} Sim. Em qualquer reta (arco), dividimos nosso plano em metade de uma esfera.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: conjunto $\mathbb{N}$ dos números naturais (inteiros maiores ou igual a zero);
+        \textbf{RETAS}: subconjuntos de $\mathbb{N}$ das formas
+        $r_0 = \mathbb{N} \setminus \{0\} = \{1, 2, 3, \ldots \}$
+        e
+        $r_k = \{0, k\}, \quad \forall k \geq 1$.
+
+        \answer{
+            \textbf{Resposta: $r_0$}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Pois $r_0$ contém infinitos pontos, porem não contem o ponto $0$, logo ele não contem todo o plano e possiu pontos que pertencem a reta e um ponto que não pertence a reta.
+                \item \textbf{Axioma I2:} Não. Pois qualquer ponto ligado ao ponto $0$ não passa por uma reta unica.
+                \item \textbf{Axioma II1:} Sim. Como na verdade a reta é um seguimento de 1 a infinito, sempre poderemos pegar 3 pontos e ordenar de uma unica forma que um esteja entre os outros dois.
+                \item \textbf{Axioma II2:} Não. Pois se tivermos os pontos $A$ = 1 e $B$ = 2 (ou seja um seguido do outro na sequencia dos naturais), logo não teremos um $C$ onde $C$ e somente $C$ esteja entre $A$ e $B$.
+                \item \textbf{Axioma II3:} Não. Pois como nossa reta é quase todo nosso plano com excessão do 0, logo não teremos um plano sendo ``dividido'' em dois de uma forma coerente.
+                \item \textbf{Axioma III1:} Sim. A distância entre dois naturais pode ser definida como $|a - b|$, que é sempre $\geq 0$ e zero se e só se $a = b$.
+                \item \textbf{Axioma III2:} Não. Os pontos de $r_0$ são números naturais $\{1, 2, 3, \ldots\}$, que não podem ser colocados em correspondência biunívoca com todos os números reais.
+                \item \textbf{Axioma III3:} Não. Se $C$ está entre $A$ e $B$ em $r_0$, não necessariamente $S_{AC} + S_{CB} = S_{AB}$ devido à natureza discreta dos naturais.
+            \end{itemize} 
+        }
+
+        \answer{
+            \textbf{Resposta: $r_k$}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Pois tirando os dois pontos pertencentes a reta todos os demais naõ estão nela.
+                \item \textbf{Axioma I2:} Sim. Como cada $r_k$ possui apenas dois pontos, logo existe uma reta que os contém.
+                \item \textbf{Axioma II1:} Sim. Pois como nossa reta é com apenas dois elementos, logo não temos como ordenar 3 pontos.
+                \item \textbf{Axioma II2:} Sim (vacuamente). Pois como nossa reta possui apenas dois pontos, logo não temos como ordenar 3 pontos ou mais.
+                \item \textbf{Axioma II3:} Não.Pois nos naturais não temos como apartir de uma reta com apenas dois ponto dividir nosso plano em dois de uma forma coerente.
+                \item \textbf{Axioma III1:} Sim. A distância entre $0$ e $k$ é $|0 - k| = k \geq 0$, e é zero se e só se $k = 0$ (mas $k \geq 1$).
+                \item \textbf{Axioma III2:} Não. Uma reta $r_k$ tem apenas dois pontos $\{0, k\}$, que não podem ser colocados em correspondência biunívoca com todos os números reais.
+                \item \textbf{Axioma III3:} Sim (vacuamente). Como não existe ponto $C$ entre $0$ e $k$ em $r_k$, a condição é satisfeita vacuamente.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: conjunto Q dos números racionais;
+        \textbf{RETAS}: subconjuntos de Q que possuem exatamente três elementos.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Cada reta contém apenas 3 pontos, logo existem infinitos pontos racionais que não pertencem à reta.
+                \item \textbf{Axioma I2:} Não. Dados dois pontos distintos em Q, existem infinitas retas (subconjuntos de 3 elementos) que os contêm, pois podemos escolher qualquer terceiro ponto racional para completar o conjunto.
+                \item \textbf{Axioma II1:} Sim. Os numeros racionais são densos e ordenaveis e sempre vamos poder ordaenasr os 3 pontos de forma crescente ou decrecente e nosso ponto C sempre estara entre nosso ponto A e B.
+                \item \textbf{Axioma II2:} Sim (vacuamente). Pois como nossa reta possui apenas 3 pontos, logo não temos como ordenar um ponto D que faça B estar entra A e D.
+                \item \textbf{Axioma II3:} Não. Um subconjunto de 3 pontos não pode dividir o conjunto Q em dois semi-planos distintos.
+                \item \textbf{Axioma III1:} Sim. A distância entre dois racionais pode ser definida como $|a - b|$, que é sempre $\geq 0$ e zero se e só se $a = b$.
+                \item \textbf{Axioma III2:} Não. Uma reta tem apenas 3 pontos racionais, que não podem ser colocados em correspondência biunívoca com todos os números reais.
+                \item \textbf{Axioma III3:} Sim. Se $C$ está entre $A$ e $B$ na ordem dos racionais, então $S_{AC} + S_{CB} = |A - C| + |C - B| = |A - B| = S_{AB}$.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: conjunto Z dos números inteiros;
+        \textbf{RETAS}: subconjuntos de Z que possuem exatamente dois elementos.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Cada reta contém apenas 2 pontos, logo existem infinitos pontos em Z (exceto os dois pontos da reta) que não pertencem à reta.
+                \item \textbf{Axioma I2:} Sim. Dados dois pontos distintos em Z, existe uma única reta (subconjunto) que os contém.
+                \item \textbf{Axioma II1:} Sim (vacuamente). Uma reta tem apenas 2 pontos, logo não existe ponto C entre A e B.
+                \item \textbf{Axioma II2:} Sim (vacuamente). Uma reta tem apenas 2 pontos, logo não existe ponto C entre A e B e nem D tal que B esteja entre A e D.
+                \item \textbf{Axioma II3:} Não. Uma reta com apenas 2 pontos não pode dividir o plano Z em dois semi-planos.
+                \item \textbf{Axioma III1:} Sim. A distância entre dois inteiros pode ser definida como $|a - b|$, que é sempre $\geq 0$ e zero se e só se $a = b$.
+                \item \textbf{Axioma III2:} Não. Uma reta tem apenas 2 pontos inteiros, que não podem ser colocados em correspondência biunívoca com todos os números reais.
+                \item \textbf{Axioma III3:} Sim (vacuamente). Como não existe ponto $C$ entre $A$ e $B$ numa reta de 2 pontos, a condição é satisfeita vacuamente.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: semi-esfera, incluindo a linha do equador;
+        \textbf{RETAS}: arcos de círculo máximo contidos na semi-esfera.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Qualquer arco de círculo máximo não contém todos os pontos da semi-esfera.
+                \item \textbf{Axioma I2:} Não. Pois se houver dois pontos $A$ e $B$ alinhados horizontalmente no tropico de capricónio, não existe uma reta que os contenha.
+                \item \textbf{Axioma II1:} Sim. Em um arco de círculo máximo, dados três pontos, um está entre os outros dois.
+                \item \textbf{Axioma II2:} Sim. Dados dois pontos A e B em um arco, sempre existem pontos C entre A e B e D tal que B está entre A e D. (DUVIDA)
+                \item \textbf{Axioma II3:} Não. Um arco de círculo máximo não divide a semi-esfera em dois semi-planos distintos (pois é limitado pela linha do equador).
+                \item \textbf{Axioma III1:} Sim. A distância entre dois pontos na semi-esfera pode ser definida como a distância euclidiana, que é sempre $\geq 0$ e zero se e só se os pontos coincidem.
+                \item \textbf{Axioma III2:} Sim. Os pontos de um arco de círculo máximo podem ser parametrizados e colocados em correspondência com os números reais.
+                \item \textbf{Axioma III3:} Sim. Se $C$ está entre $A$ e $B$ no arco, então a distância ao longo do arco satisfaz $S_{AC} + S_{CB} = S_{AB}$.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: um quadrado (inclunido as bordas);
+        \textbf{RETAS}: retas usuais (que se obtém usando uma régua), mas restrita ao quadrado.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Qualquer reta não contém todos os pontos do quadrado.
+                \item \textbf{Axioma I2:} Sim. Dois pontos distintos determinam uma única reta.
+                \item \textbf{Axioma II1:} Sim. Dados três pontos colineares, um está entre os outros dois.
+                \item \textbf{Axioma II2:} Não. Se A e B estão próximos da borda, pode não existir ponto D tal que B esteja entre A e D (devido à limitação do quadrado). (DUVIDA)
+                \item \textbf{Axioma II3:} Não. Uma reta pode não dividir o quadrado em dois semi-planos se ela passa pelos vértices ou bordas.
+                \item \textbf{Axioma III1:} Sim. A distância euclidiana entre dois pontos é sempre $\geq 0$ e zero se e só se os pontos coincidem.
+                \item \textbf{Axioma III2:} Sim. Os pontos de uma reta no quadrado podem ser parametrizados e colocados em correspondência com um intervalo dos números reais.
+                \item \textbf{Axioma III3:} Sim. Se $C$ está entre $A$ e $B$ na reta, então $S_{AC} + S_{CB} = S_{AB}$ pela propriedade da distância euclidiana.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: um quadrado sem as bordas;
+        \textbf{RETAS}: retas usuais (que se obtém usando uma régua), mas restrita ao quadrado.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Qualquer reta não contém todos os pontos do quadrado aberto.
+                \item \textbf{Axioma I2:} Sim. Dois pontos distintos determinam uma única reta.
+                \item \textbf{Axioma II1:} Sim. Dados três pontos colineares no interior, um está entre os outros dois.
+                \item \textbf{Axioma II2:} Não. Se A e B estão próximos da ``borda imaginária'', pode não existir ponto D no quadrado aberto tal que B esteja entre A e D.
+                \item \textbf{Axioma II3:} Não. Uma reta pode não dividir o quadrado aberto em dois semi-planos distintos se ela se aproxima das bordas.
+                \item \textbf{Axioma III1:} Sim. A distância euclidiana entre dois pontos é sempre $\geq 0$ e zero se e só se os pontos coincidem.
+                \item \textbf{Axioma III2:} Sim. Os pontos de uma reta no quadrado aberto podem ser parametrizados e colocados em correspondência com um intervalo dos números reais.
+                \item \textbf{Axioma III3:} Sim. Se $C$ está entre $A$ e $B$ na reta, então $S_{AC} + S_{CB} = S_{AB}$ pela propriedade da distância euclidiana.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: um quadrado (inclunido as bordas) e com um buraco no meio;
+        \textbf{RETAS}: o caminho mais curto (no sentido de comprimento usual mensurável com uma trena) que une os dois
+        pontos e passa por eles, mas restrito ao quadrado.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Qualquer caminho mais curto não contém todos os pontos do quadrado com buraco.
+                \item \textbf{Axioma I2:} Não. Dois pontos podem ter múltiplos caminhos mais curtos de igual comprimento contornando o buraco.
+                \item \textbf{Axioma II1:} Não. O conceito de ``entre'' não se aplica bem a caminhos que contornam obstáculos.
+                \item \textbf{Axioma II2:} Não. Pode não existir ponto C entre A e B ou ponto D tal que B esteja entre A e D devido ao buraco.
+                \item \textbf{Axioma II3:} Não. Um caminho não divide o quadrado com buraco em dois semi-planos distintos.
+                \item \textbf{Axioma III1:} Sim. O comprimento do caminho mais curto é sempre $\geq 0$ e zero se e só se os pontos coincidem.
+                \item \textbf{Axioma III2:} Não. Um caminho que contorna obstáculos não pode ser parametrizado de forma simples com os números reais.
+                \item \textbf{Axioma III3:} Não. A propriedade aditiva pode falhar quando caminhos contornam o buraco de formas diferentes.
+            \end{itemize} 
+        }
+
+        \item \textbf{PLANO}: um quadrado sem as bordas e com um buraco no meio;
+        \textbf{RETAS}: o caminho mais curto (no sentido de comprimento usual mensurável com uma trena) que une os dois
+        pontos e passa por eles, mas restrito ao quadrado.
+
+        \answer{
+            \textbf{Resposta:}
+            \begin{itemize}
+                \item \textbf{Axioma I1:} Sim. Qualquer caminho mais curto não contém todos os pontos do quadrado aberto com buraco.
+                \item \textbf{Axioma I2:} Não. Dois pontos podem ter múltiplos caminhos mais curtos de igual comprimento contornando o buraco.
+                \item \textbf{Axioma II1:} Não. O conceito de ``entre'' não se aplica bem a caminhos que contornam obstáculos.
+                \item \textbf{Axioma II2:} Não. Pode não existir ponto C entre A e B ou ponto D tal que B esteja entre A e D devido ao buraco e às limitações das bordas.
+                \item \textbf{Axioma II3:} Não. Um caminho não divide o quadrado aberto com buraco em dois semi-planos distintos.
+                \item \textbf{Axioma III1:} Sim. O comprimento do caminho mais curto é sempre $\geq 0$ e zero se e só se os pontos coincidem.
+                \item \textbf{Axioma III2:} Não. Um caminho que contorna obstáculos não pode ser parametrizado de forma simples com os números reais.
+                \item \textbf{Axioma III3:} Não. A propriedade aditiva pode falhar quando caminhos contornam o buraco de formas diferentes.
+            \end{itemize} 
+        }
     \end{enumerate}
+
+
 
 \end{document}
